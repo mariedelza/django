@@ -1,0 +1,9 @@
+<h1>{{ article.title }}</h1>
+<p>{{ article.content }}</p>
+
+<h2>Articles récents</h2>
+<ul>
+    {% for recent_article in recent_articles %}
+        <li>{{ recent_article.title }}</li>
+    {% endfor %}
+</ul>

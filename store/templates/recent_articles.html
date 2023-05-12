@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+<div class="col-md-4">
+        <h3 class="mt-2"> Les articles recents</h3 class="mt-2">
+          <div class="row">
+             {% for article in articles %}
+         <div class="col-md-8 mb-1">
+           <img src="{{ article.image.url }}" style="max-width: 200px;">
+        </div>
+          <div class="col-4">
+            <strong>{{ article.title }}</strong> <br>
+            {{ article.intro|truncatewords:4 }} 
+
+          </div>
+           {% endfor %}
+          </div>
+      
+      </div>
+    </div>
+{% comment %} <h2>Articles récents</h2>
+<ul>
+    {% for article in articles %}
+        <li>{{ article.title }}</li>
+    {% endfor %}
+</ul> {% endcomment %}

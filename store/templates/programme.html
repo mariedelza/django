@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>introduction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Meilleur Blog de la ville</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Blog</a></li>
+          <li><a href="{% url 'about' %}">A propos</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}"><button class="btn btn-info">Deconnexion</button></li> 
+            {% else %}
+            <li><a href="{% url 'login-blog' %}"><button class="btn btn-info">Connexion</button></li> 
+              {% endif %}
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="{% url 'recherche' %}" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Programmation  Python</span> <span class="mx-1">& Marie;</span> <span>20 janvier 2022</span></div>
+              <h1 class="mb-5">Les bonnes pratiques à adopter pour Python.</h1>
+              <p><span class="firstcharacter">I</span>l est souvent facile de savoir quand un développement n’est pas de bonne qualité. Des bugs qui surgissent de nulle part, un code qui tourne comme de la mélasse et des structures de projet peu maniables, en sont quelques signes révélateurs. Mais parfois, il n'est pas facile de savoir si l'on fait bien les choses. En matière de programmation, les bonnes pratiques sont comparables aux effets spéciaux du cinéma : on ne remarque jamais leur présence, car ils ne s'annoncent pas.
+
+Comment reconnaître les bonnes pratiques de programmation en Python ? Si vous êtes novice dans le langage, et si vous voulez savoir à quoi peuvent ressembler les bonnes pratiques de développement en Python, ou si vous voulez simplement savoir si certaines pratiques acquises valent la peine d'être conservées, voilà quelques points de repère. En suivant ces  meilleures pratiques, vous aurez l’assurance d’utiliser correctement le langage.</p>
+
+              <figure class="my-4">
+                <img src="data:image/jpeg;base64,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" alt="" class="img-fluid">
+                <figcaption>
+ En suivant ces huit meilleures pratiques, vous aurez l’assurance d’utiliser correctement le langage: </figcaption>
+              </figure>
+              <p>Utiliser des environnements virtuels et des outils de gestion de projet:
+Même les petits projets Python ponctuels gagnent à utiliser un environnement virtuel et une structure de projet appropriée. Des outils comme Poetry rendent le processus d'installation pratiquement automatique. Un simple environnement virtuel venv peut apporter à lui-seul des bénéfices. Le contrôle de version est un autre outil essentiel de gestion de projet. Aujourd’hui, Git est l’outil généralement utilisé pour cela. Et oui, vous devriez utiliser Git même pour de simples projets à un seul fichier. Vous ne savez jamais à quel moment vous reviendrez à une version de code antérieure. La plupart des IDE supportant Python offrent également un support intégré pour venv et Git, il est donc facile de les utiliser.</p>
+              <p>Se servir des fonctions intégrées de Python:
+Un programmeur Python avisé sait utiliser les fonctions intégrées et la bibliothèque standard de Python pour traiter la grande majorité des cas d’usage courants. La plupart des tâches de routine que vous aurez à accomplir - manipulations de fichiers, expressions régulières, travail avec un navigateur web, etc. - sont déjà gérées quelque part dans Python. Les développeurs Python moins expérimentés se posent souvent la question suivante : comment savoir si quelque chose dans la bibliothèque standard couvre mon cas d’usage, sans avoir à en mémoriser le contenu ? La réponse consiste à mettre en signet l'index de la bibliothèque standard et les pages de présentation des fonctions intégrées et de les parcourir chaque fois que vous vous trouvez aux prises avec un problème de « programmation courante ». Une confrontation constante avec les outils disponibles dans Python est une source d’apprentissage inestimable.</p>
+              <p>S’appuyer sur les bons modules:
+Comme pour les modules intégrés et la bibliothèque standard, l'utilisation de la vaste collection de modules tiers de Python permet de gagner du temps. En lançant une recherche pour un problème donné via le front-end web de PyPI, vous trouverez presque toujours des modules qui offrent une solution prête à l'emploi. Encore une fois, pourquoi réinventer la roue (Python) quand on peut installer simplement des modules adéquats en utilisant le gestionnaire de paquets pip ? De plus, de nombreux modules Python sont dotés de performances accélérées par le langage C, ce qui signifie que vous bénéficiez d'une vitesse de développement et d'une exécution de programme plus rapide lorsque vous utilisez les modules d'autres développeurs. C'est une question qui revient souvent : si plusieurs modules sont disponibles pour gérer mon cas d’usage, lequel dois-je utiliser ? La réponse est simple : commencez par le projet qui semble afficher le plus de cas d’usage ou bénéficier d’une forte adoption (en fonction du nombre d’étoiles ou de forks GitHub, par exemple), car il y a de fortes chances que votre cas d’usage soit semblable à celui de beaucoup d'autres personnes.</p>
+              <p> Ne pas tout faire en POO:
+La programmation orientée objet (POO) regroupe les structures de données avec les méthodes utilisées pour les manipuler, ce qui facilite l'écriture de code de haut niveau. Pour un langage de haut niveau comme Python, la programmation orientée objet convient parfaitement. Mais tout le code Python n'a pas besoin d'être orienté objet. Les développeurs Python avertis comprennent que 20 lignes (ou même 200 lignes) de code « get-it-done-and-get-on-with-it » peuvent faire gagner un temps précieux par rapport à une alternative orientée objet, tant que le travail n'a pas besoin de l'approche POO. Dans l'ensemble, les grands projets complexes bénéficient de l'orientation objet, mais à moins que le projet n'exige une POO, rien n’empêche d'assouplir les règles.</p>
+              <p>Tester le code:
+Concernant des projets plus importants, les Pythonistes avisés savent bien l'intérêt qu’il y a à créer des suites de tests. Aussi fastidieux et fatigant que puisse être l'écriture de tests, ils sont inestimables quand un projet dépasse un certain niveau de complexité. Une maîtrise encore plus avancée consiste à construire des tests en parallèle avec chaque nouvelle fonctionnalité, et non après coup. En réalité, plus vite vous franchirez l’obstacle des tests, plus vite vous améliorerez votre code. Commencez à tester dès l’implementation de la première fonctionnalité et vous serez heureux de l'avoir fait.</p>
+              <figure class="my-4">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAA9lBMVEX86fNkZGT/7Pb/7/lfX1//6HNbXFtSVFPDt7//7vj36/JdXF3/9P0waZiTkpOAfoA+e6xvb29WWVfn2+L/1Ds3cqKinKG+uLw8eKmioKKtpqtFhLbf0Nj/4mJsamvs4ef/3VX/3FH/5Gf/2Ef/3VP96LP86vz04utJirzg0Nn96cz95tfW1OUpZpb/0zFlhKm5wdd0n8gygrrNxMpCRkSIiYn/1lj/0iL94K/LzuKoutcqdauUqsdhlMFwkbaJq89HeKT+6I9tnMf+55v86OT946b+5oEOXJCEnLn95cO0sLNQga3+24LGv8P+3JN5d3j+12T+2XnR0LRqAAAKAElEQVR4nO2biVbbuhZAHcnYyAiH2IlNJgIktXNbym1J0wKBtvd1uk0fTfv/P/M0xI48JIZgptez1+oq2LEl7UhHR7LRNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEcFwg9dg2UgzgMUS3t+1br/cgtAmFi9ozPG0VFIML5PM6gzMw3jkTlB+Oj89fCEsTMR/Hh/bt1fZ0abTqWy9bic4LPhSXvBDmN3Mrm4Nylo03hsTvD5yXDYbg8VJUzK7uTHfdXy8TlBR0zJyeXlSVLJ7m7j/T31lLtwgggDET5trHP1B6bkiNKzSUpJ4+XZHUZaQhc1KN8J2vRaXquzibXO5hqNwJfD9jkTij+klDTusKPQ3lTvRJW9k35CZxb2HYxtm9z8asy6yStWPXS+oygRTj7S4svXImSTr/PXXTrRaNUivt0htreek/Zr1nh6uZNS0mjcVT9xzUrlPpyMvNFovX7Sbp9c9NzXO6mR88SdzCwydT3bWtdJuz2Z5Ch5yk5w1UJ+Z9Nbz0m7nZmFJdtP2YmG+TxMiLaGEg2zlH4S01B6yR07udN553agI5WLxkLJ9vb1nCCEKcUknQegpd8QWuUkP8lChJex5Bwvn5axbGWlWCQBxpieNxQlsZNg+W0IDkctb1y1m5s9VSHGIy+hNOTMf5JOogMLJwQTt9NxSfq7wOEVK6JqT91My9lnR1OvWq16fvbkDcFHHy7bJ225GN5ZjB1VyTZ+3j1kbPzzfIkVbE1rpqMLDNO24kp1PN3cU9MbYpumWaF8Z+CNydbBTAo78GaEFk5oOK2yg47pjN2E3p5tGqKILbM2SuRMxPJni/Kr7m0GOwr/w1Y5w2x43VWVMCeHG4LupzwpyPJM1hzdcByH/c9+cOdSSJP9Xks48XR5BHVMXedOeDvMTuyE8pazo+KU6S9ah31TF4UY/Jw5XgxJQlrsoCxeF5dt3kJKOBwqStpLlCycHHa/ZKXgjsEa4VS8q47rXs34l2/2Iif6MieaO7bHvJFj27bHsZPKlLXcMGvVmSmaHkuhTZMbYYWMmhUurRZFHjrSjcqWY1+5PXfkmVymOVp7+JDhUJWSTUxSTtj4GXxO3wSNeGVnIxZdEYtzdMprVcOFTlio6Yl4wuKXiADSiVEx9vyQYmrZ/FfTnYv3+Wdti8VXFgFbDi9SloHH7IzRIiLyItzb41Iq60y9ojV8x+QaSuZOeEg5zI4ebLNWzmj8xVCPtcWYkkInuXMxG0o+lQ2i/Ma6LVoupijDi+5Epw7/VZzCb9iPflwGsvhdnHU7CmlfT4l0IpV0B3lO9KoygLGInHg9J8xB/BUTPb4RnVW4+Pg2lA872Ycwt+UvFJCpIfrNWkrELtJ1lDS4k7mS7uBFoZMWq69xhdZysqV8GDejhqORo36SwYedPsY5TrSQn1rXyXk7T8luWsnLv/Gzw0hJd5COshknbEaJ6ruGEyWPRSNjfh7zblFRJxNa5b7CPCdYX98Jft0unIU5314FXyMj3e7+1yInGuVRVie3dqK5zjwyECeOLNGHfWPeGbNO9tZ3QooTE9FNtvHn/UjJ/v5+OqDkOKlFE8YtnfTm50XPM3y1mcgVmkjJTrST5cFEUfLtiHeTbqRkv5+ajbNORE83xPdbkhN+xkhOJWJ64VG3VCcsxOYrkS4k3xpu8Kwbd5L9waCfCrJZJ4RPosZmiU6meirEyqhR0Ut2wqadtJLGy49/J/n3DAdfBoqSg4P+90In3IQxLc+JuM1io0UWK2b8sp2cpR7lNBrnIU4RBC++7sdGuJKDeqET1BSRv8R+0srpJ9yJcUdO4gd+70lgfX+W5NPGoKt2EtZN6qdFTkjpTqbZeCLGTqX0eJJ4utX4l2qfDpN0I/YXSvrF/UTGkxLHjkhUZBYYw2OsXi3bSThRY8kPrG3MV78b0YJPmYEjI/3+cWGMxdUokS11Lk42U8zFzbLnYryjKHl5FPyzkVGSHjfCSeFcTMUq3y3PiczZxomYxbP98nM2fLmjdpPnhys6ySAy0q/3C3M2S+SxcW6/lxhXazmRGU/iPq3luf0tnKCLxRO/xkXw6TqdpF+v/7dwveMbUSYuZ2W1mes5kWtANcjSvaVrwFs5OZsscjW2pslTEgfXfqTkXSrEZp2Idb3c6ULTrVRb1nMiZ15lr0BEGFOeKjW3tyaxku1XQWFw5UaYk/Rd0ntK+IrvPspmi6qrAQWJjaL4gKlOJ6uciM08ZxQ3lHvXx3K7rlQn+H2c0StOVnWSev04PXSkE33WkVYQ5bWff4XsJF8O6lWLzI24VUORJAaAHQla5URuIhnuvKVyL09+tFwnLEOJFjkvIyfLO4lQUn+X2Y8VTljdZ36PJb6uzXuJ05qPJdlRdH3awxSHV1Wx8Rw7QT4PEz6Vz8lWOtHInpjgeXJN3bGhaC/XCb6YpJzkBFfVSP34Z2bfXjox+G67/MeqG2+cspEkNtIN0+D/9MqW2k9YJsN3jWatq7DQiWbV+Gd127ZrrBDd6cxbXbITNnomci0snRyuHjdMyducRxkixvbmXYC33/HVnchOxZif0Q1zb7qZeOKDbfHQxpTPvBxdN5NOdH3xWAI3xYMfXVxQDaNG4ze67iScsAKd9Z1o9NVHsSPwjTlR8/nBXMSx5J3k+GeeV+GEUrc1Mzm1qZWoD8JXVYMd36rZvksxT9PVzeaONzMc+RywYzc9T3US2s2m/deipLA1c0QRnru4A2FX2cmprdn0kguBm4FwKB6ah4EaXAc/X+TwOfeBcTwXE6y5rqvhzDeEMNZCjQUCIvdYxTJFOYmRfMIrXlJMXCneWlR/xyR02a2SB1Mfyh64OfLt+kAdNwdfrn95Ij8prAoPGsmd1UdMkIgkB/Hcy1nxPkFebr8KvmUmlm5PgWBZLs8o0QnPYxOzxGMmOMyZgY+Py3bCn8ukdsweL0F2DVw/OP3+9rhcJxrPtm5f2/shyMlc2TwTvC3VCW4ZNxH4wATZNI3nrMHpcWbHJMlNnOCRuUjKHz/B10EquB7PnRz/KscJIpi/m2LYtPizj4Tn/cwa+HMQaGzZd7ryums5QYRit8XfL3LGT2XkMILf/eyK72f+GkflOk5c36vqzhZfqEyfkBIupZ4wIjK2+ru3BZfxd6cKnKCReJ9PNxyv96SU8NhRryeU8Cw256W+FKE/M2erm0pMwzGN8dU9/sVlWQTa6a938zytzlfDv05XvSccgajrr87Wse933Pv9y9wSCbTvP3/znOTt7y/frWsIkRS19kH+hrtEgjkPXQ8AAID/M8IsD12lBybHyJ+uRbHgui5I4SzrJn+wEg4IAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP5c/gfmXZQdI+BrQQAAAABJRU5ErkJggg==" alt="" class="img-fluid">
+            
+              </figure>
+              <p>  Ne plus utiliser Python 2
+C'était déjà vrai l’an dernier et c'est doublement le cas aujourd’hui. Pendant longtemps, Python 2 a bien fonctionné, mais il n'est désormais plus du tout supporté par l'équipe de développement officielle de Python. Les Pythonistes avisés ont déjà migré leurs projets vers Python 3 ou sont en train de le faire.</p>
+              <p>Ne pas utiliser, non plus, la dernière version de Python:
+Python 3.8 est peut-être la dernière et la « meilleure » version de Python, mais cela ne signifie pas que vous êtes obligés de l'utiliser. Un développeur avisé sait que l'utilisation de la version la plus récente de n’importe quel outil est toujours hasardeuse. Python n'est pas différent. Un tel programmeur utilisera la révision précédente la plus récente pour s’assurer de la plus large compatibilité avec les modules tiers. Après tout, la possibilité d’exploiter tous ces modules est l'une des principales raisons d'utiliser Python.</p>
+              <p>Utiliser d'autres langages de programmation:
+Python est considéré comme le « second meilleur langage de programmation » pour à peu près tout. Mais parfois, l'écart entre le « meilleur » et le « second » est vraiment important. Les développeurs Python avisés savent que Python n'est qu'un outil parmi d'autres et qu’il faut toujours utiliser l’outil le plus adapté au travail que l’on veut accomplir. Pour les applications ou les opérations nécessitant une vitesse d'exécution maximale, le Python pur n’est pas forcément le plus indiqué. Mieux vaudrait aller voir du côté de C, de Rust ou même de Go. Mais toute programmation à haute performance n’implique pas forcément de se détourner complètement de Python. On peut, par exemple, utiliser une bibliothèque en C pour Python comme Numpy ou Pandas, ou envelopper du code C ou compatible C dans un shell Python, ou encore utiliser Cython pour transformer le Python en C.</p>
+              
+            </div><!-- End Single Post Content -->
+
+            
+
+            
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">& Astou;</span> <span>20 janvier 2020</span></div>
+                    <h2 class="mb-2">"Un esprit sain dans un corps sain le tout dans un environnement sain"</h2>
+                    <span class="author mb-3 d-block">Juvenal</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode de vie</span> <span class="mx-1">& gerald;</span> <span>04 fevrier 2010</span></div>
+                    <h2 class="mb-2">"Vivre simplement pour que les autres puissent simplement vivre" </h2>
+                    <span class="author mb-3 d-block">Mahatma Gandhi</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">& diarra;</span> <span>27 septembre 2009</span></div>
+                    <h2 class="mb-2">"Lisez, chaque jour, quelque chose qui élève l'esprit"</h2>
+                    <span class="author mb-3 d-block">Edgar Allan Poe</span>
+                  </div>
+
+                  
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Business</span> <span class="mx-1">& yande;</span> <span>20 mars 2020</span></div>
+                    <h2 class="mb-2"></h2>
+                    <span class="author mb-3 d-block">David Rockefeller</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Succes</span> <span class="mx-1">& Delza;</span> <span>05 avril 2023</span></div>
+                    <h2 class="mb-2"><a href="#">"Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. Si vous aimez ce que vous faites, vous réussirez."</a></h2>
+                    <span class="author mb-3 d-block">Albert Schweitzer</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+                <!-- Trending -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Technologie</span> <span class="mx-1">& michael;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2">Intelligence Artificielle (IA), l'Internet des Objets (IoT), la cybersécurité, la blockchain, la 5G, la réalité augmentée/virtuelle (RA/RV), la voiture autonome, la ville intelligente.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode </span> <span class="mx-1">& maurice;</span> <span>21 septembre 2022</span></div>
+                    <h2 class="mb-2">le style minimaliste, le streetwear, la mode durable et éthique, les sacs en bandoulière, le tailoring décontracté, les couleurs pastel, les vestes matelassées.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Alimentation </span> <span class="mx-1">&bullet;</span> <span>22 mars 2023</span></div>
+                    <h2 class="mb-2">la cuisine végétalienne, les aliments biologiques et locaux, les plats à base de plantes, les régimes pauvres en glucides, les aliments fermentés, les alternatives à la viande, les superaliments.</h2>
+                    <span class="author mb-3 d-block">Jenny</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Santé </span> <span class="mx-1">&bullet;</span> <span>23 janvier 2020</span></div>
+                    <h2 class="mb-2">le bien-être mental, la méditation, le sommeil de qualité, l'entraînement fonctionnel, la santé numérique, la médecine préventive, la thérapie en ligne.</h2>
+                    <span class="author mb-3 d-block"> Wilson</span>
+                  </div>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Divertissement</span> <span class="mx-1">& philip;</span> <span>20 aout 2018</span></div>
+                    <h2 class="mb-2">les jeux vidéo, les sports électroniques (e-sports), les podcasts, le streaming de musique et de films, la réalité virtuelle, la réalité augmentée, les plateformes de médias sociaux.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Éducation </span> <span class="mx-1">&bullet;</span> <span>5 decembre 2022</span></div>
+                    <h2 class="mb-2">l'apprentissage en ligne, la formation continue, l'éducation personnalisée, les compétences numériques, l'apprentissage par projet, l'éducation à distance, l'intelligence artificielle dans l'éducation.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+                </div> <!-- End Trending -->
+
+              
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.youtube.com/watch?v=ztEx9p1u9SY" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="a{% static 'assets/ssets/img/post-landscape-5.jpg' %}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
+
+           
+
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-legal">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>Marie Ndiaye</span></strong>. All Rights Reserved
+            </div>
+
+           
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

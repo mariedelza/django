@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>introduction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Meilleur Blog de la ville</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Blog</a></li>
+          <li><a href="{% url 'detail' %}">Articles</a></li>
+          <li class="dropdown"><a href="{% url 'category' %}"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url 'recherche' %}"> Recherche</a></li>
+               <li><a href="#"> Recherche</a></li>
+             
+              </li>
+              
+            </ul>
+          </li>
+
+          <li><a href="{% url 'about' %}">A propos</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="{% url 'recherche' %}" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Introduction a php</span> <span class="mx-1">& Marie;</span> <span>20 janvier 2022</span></div>
+              <h1 class="mb-5">Introduction à la programmation php.</h1>
+              <p><span class="firstcharacter">P</span>HP est un langage interprété (un langage de script) exécuté du côté serveur (comme les scripts CGI, ASP, ...) et non du côté client (un script écrit en Javascript ou une applet Java s'exécute sur votre ordinateur...). La syntaxe du langage provient de celles du langage C, du Perl et de Java. Ses principaux atouts sont :
+
+Une grande communauté de développeurs partageant des centaines de milliers d'exemples de script PHP ;
+La gratuité et la disponibilité du code source (PHP est distribué sous licence GNU GPL) ;
+La simplicité d'écriture de scripts ;
+La possibilité d'inclure le script PHP au sein d'une page HTML (contrairement aux scripts CGi, pour lesquels il faut écrire des lignes de code pour afficher chaque ligne en langage HTML) ;
+La simplicité d'interfaçage avec des bases de données (de nombreux SGBD sont supportés, mais le plus utilisé avec ce langage est MySQL, un SGBD gratuit disponible sur de nombreuses plateformes : Unix, Linux, Windows, MacOs X, Solaris, etc...) ;
+L'intégration au sein de nombreux serveurs web (Apache, Microsoft IIS, etc.).</p>
+
+              <figure class="my-4">
+                <img src="https://www.ictjournal.ch/sites/default/files/styles/np8_full/public/media/2019/01/08/php-risk.jpg?itok=VPE4R2Rk" alt="" class="img-fluid">
+            
+              <p>PHP est un langage qui n'est pas très nouveau. Il est apparu en 1994 soit peu de temps après le HTML lui-même. Il a immédiatement été orienté vers l'extension des capacités dans la création des sites web et a visé très tôt la simplicité et une intégration maximale avec le HTML. Ces ingrédients ont fait qu'à l'heure actuelle, PHP représente le socle sur lequel repose près de 80% des sites web.
+
+Seulement 80% direz-vous ? J'entends d'ici d'autres questions ?
+
+n'y-a-t-il pas une solution qui soit 100% compatible ?
+si, en HTML !
+alors pourquoi ne pas apprendre le HTML ?
+bien sûr, vous pouvez le faire par exemple avec ce livre sur le html5, et il faudra même connaître le HTML avant de passer au PHP ?
+Pourquoi ça ? A quoi sert-il d'apprendre PHP alors ?
+Ah, cela dépend de vos besoins.</p>
+              <p>D'abord un site web produit en HTML est un site dit statique. Cela signifie que les pages web produites ne peuvent en aucun cas s'adapter au besoin d'un utilisateur. En Html, vous n'aurez pas de système de connexion ou login, pas de système de news, pas de forum, pas de commentaires utilisateurs, pas de panier pour la vente en ligne... Tous ces besoins exigent une forme d'interaction que ne permet pas HTML. Dans ce cas, il faut utiliser un langage différent. Il en existe plusieurs :
+
+Javascript, permet de faire des interactions de surface : faire bouger des choses dans la page, afficher ou en cacher d'autres ;
+PHP ou, moins utilisé, ASP ou Python, permettront d'agir sur le contenu et les données qui seront traitées en amont, et produiront une page web sur mesure avec par exemple le nom de l'utilisateur après qu'il se soit connecté.
+- Ah, ça m'a l'air compliqué, ça fait beaucoup de choses alors !</p>
+              <p>Pages statiques vs pages dynamiques
+Une page statique et une page écrite directement en HTML. Elle peut éventuellement incorporer du
+code Javascript lui donnant un semblant de 'dynamisme' mais uniquement du côté du navigateur et
+des données locales.
+Pour des traitements plus lourds nécessitant l'accès à une base de données, un formatage de tableau
+en fonction de résultats, une recherche poussée, du graphisme, il faut passer par des pages
+dynamiques et par un langage qui sera exécuté du côté du serveur : ASP sur les serveurs
+Microsoft/IIS, Perl, PHP...</p>
+              <p>Scripts CGI
+PHP peut être utilisé comme langage CGI. Pour rappel, un script ou programme CGI est un
+programme comme un autre mais dont la sortie est dédiée à un navigateur, par exemple un
+programme shell, C ou Perl qui sort du HTML. PHP étant un langage script comme un autre on peut
+l'utiliser dans ce cas, mais ce n'est pas forcément le mieux.</p>
+              <p>Pages dynamiques et PHP
+PHP est un langage Server Side ou côté serveur. Lors du chargement d'une page PHP, c'est le
+serveur qui va lire, interpréter et exécuter le code. Puis il renvoie le résultat, généralement sous la
+forme de code HTML au navigateur. Ainsi le navigateur et l'utilisateur ne voient jamais le véritable
+code PHP exécuté. De plus le résultat étant une page web classique en HTML, pas besoin d'installer
+sur le client des composants spécifiques (java, ...). Il n'y a donc pas de notion de vitesse d'exécution
+du côté du client, mais celle du serveur est prépondérante.</p>
+              <figure class="my-4">
+                <img src="https://www.webindiamaster.com/assests/images/blog/php-development.jpg" alt="" class="img-fluid">
+               
+              <p>Pourquoi préférer PHP à d'autres langages comme ASP ?
+ASP n'est pas entièrement un langage puisque ASP veut dire Active Server Page. ASP dispose bien
+entendu de ses propres API mais qui peuvent être accessibles via un autre langage. Il s'agit d'utiliser
+un langage (quelconque) pour créer des pages dynamiques. Nativement disponible avec IIS sous
+Windows, il ne l'est pas par défaut avec les autres systèmes ou serveurs web comme Apache. Il
+existe cependant des modules de compatibilité ASP pour Apache comme Apache::ASP qui reprend
+les API ASP en les étendant et en programmation PERL. Sous Windows, le code ASP se fait
+généralement en VBScript ou en Jscript. C'est aussi possible sous Unix/Linux et Apache, mais il
+faut alors se tourner vers des solutions commerciales (Sun One ASP, Instant ASP, ...).</p>
+              <p>Ce que vous devez déjà connaître
+Vous devez connaître HTML ainsi qu'un langage de programmation procédural (C par exemple).
+Une connaissance basique du SQL peut être nécessaire mais sera abordée.</p>
+              <p>Le nécessaire serveur
+PHP ne sert pas seulement à faire des pages dynamiques. C'est un langage interprété qui au même
+titre que Perl, Python ou TCL est capable de lancer des scripts intéractifs ou non. On peut même
+utiliser PHP pour créer des interfaces graphiques (extension GTK). Le minimum nécessaire et vital
+pour apprendre PHP est donc l'interpréteur PHP lui-même sur un environnement supporté (Unix,
+Windows, Mac, ...).
+Si on parle de LAMP, on voit bien la référence. Un système Linux, un serveur Web Apache, un
+serveur de bases de données MySQL et un interpréteur PHP. La version 4 de PHP permet de
+fonctionner avec IIS, et MySQL existe aussi pour Windows. On peut donc utiliser une architecture
+WIMP (Windows, IIS, MySQL, PHP) ou WAMP (Windows, Apache, MySQL, PHP). Ajouter PHP
+à IIS, c'est laisser la porte ouverte à tous les vents, on préférera donc la seconde solution.
+Les distributions Linux disposent déjà du nécessaire pour l'architecture LAMP et le paramétrage est
+assez simple. De plus le mode « user_mod » de Apache permet à chaque utilisateur de créer son site
+web dans un répertoire spécifique de son répertoire personnel.
+Sous Windows, c'est déjà un peu plus complexe à mettre en oeuvre manuellement. On emploie donc
+des distributions toutes faites, la meilleure se nommant EasyPHP. Les versions 1.6 et 1.7 sont les
+meilleures pour développer. On peut ainsi développer son site sous Windows et le porter tel quel sur
+un serveur Unix.</p>
+              <p>Le nécessaire client
+Pour développer il suffit d'un simple éditeur mais il vaut mieux préférer un éditeur plus évolué
+supportant la coloration syntaxique et quelques fonctions évoluées. L'éditeur HAPEdit 3 est parfait
+pour développer en PHP. L'accès aux bases MySQL peut se faire soit depuis un navigateur
+(phpMyAdmin) soit depuis une interface MySQLCC ou encore DBDesigner pour la conception.
+Pour les tests : un simple navigateur respectant les standards du web.</p>
+            </div><!-- End Single Post Content -->
+
+            
+
+            
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">& Astou;</span> <span>20 janvier 2020</span></div>
+                    <h2 class="mb-2">"Un esprit sain dans un corps sain le tout dans un environnement sain"</h2>
+                    <span class="author mb-3 d-block">Juvenal</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode de vie</span> <span class="mx-1">& gerald;</span> <span>04 fevrier 2010</span></div>
+                    <h2 class="mb-2">"Vivre simplement pour que les autres puissent simplement vivre" </h2>
+                    <span class="author mb-3 d-block">Mahatma Gandhi</span>
+                  </div>
+
+                 
+
+                 
+                </div> <!-- End Popular -->
+
+                <!-- Trending -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Technologie</span> <span class="mx-1">& michael;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2">Intelligence Artificielle (IA), l'Internet des Objets (IoT), la cybersécurité, la blockchain, la 5G, la réalité augmentée/virtuelle (RA/RV), la voiture autonome, la ville intelligente.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode </span> <span class="mx-1">& maurice;</span> <span>21 septembre 2022</span></div>
+                    <h2 class="mb-2">le style minimaliste, le streetwear, la mode durable et éthique, les sacs en bandoulière, le tailoring décontracté, les couleurs pastel, les vestes matelassées.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Alimentation </span> <span class="mx-1">&bullet;</span> <span>22 mars 2023</span></div>
+                    <h2 class="mb-2">la cuisine végétalienne, les aliments biologiques et locaux, les plats à base de plantes, les régimes pauvres en glucides, les aliments fermentés, les alternatives à la viande, les superaliments.</h2>
+                    <span class="author mb-3 d-block">Jenny</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Santé </span> <span class="mx-1">&bullet;</span> <span>23 janvier 2020</span></div>
+                    <h2 class="mb-2">le bien-être mental, la méditation, le sommeil de qualité, l'entraînement fonctionnel, la santé numérique, la médecine préventive, la thérapie en ligne.</h2>
+                    <span class="author mb-3 d-block"> Wilson</span>
+                  </div>
+                 <!-- End Trending -->
+
+              
+
+              </div>
+            </div>
+
+            <!-- End Video -->
+
+           
+
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-legal">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>ZenBlog</span></strong>. All Rights Reserved
+            </div>
+
+           
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

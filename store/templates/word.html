@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>introduction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Meilleur Blog de la ville</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Blog</a></li>
+          <li><a href="{% url 'detail' %}">Articles</a></li>
+          <li class="dropdown"><a href="{% url 'category' %}"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url 'recherche' %}"> Recherche</a></li>
+               <li><a href="#"> Recherche</a></li>
+             
+              </li>
+              
+            </ul>
+          </li>
+
+          <li><a href="{% url 'about' %}">A propos</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="{% url 'recherche' %}" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Introduction a wordpress</span> <span class="mx-1">& Marie;</span> <span>20 janvier 2022</span></div>
+              <h1 class="mb-5">pourquoi apprendre wordpress.</h1>
+              <p><span class="firstcharacter">P</span>our les propriétaires d’entreprises moyennes, des noms comme WordPress, Joomla, Shopify, Magento, Wix, et Weebly peuvent ressembler à des noms étrangers. Le processus de construction d’un site Web apporte ces noms dans votre vie, car ce sont toutes des plateformes utilisées pour construire des sites Web. Chacune a ses propres avantages, tandis que beaucoup sont utilisées plus souvent pour des sites Web spécialisés à des fins spécifiques. Par exemple, Shopify n’a de sens que si vous gérez une boutique en ligne. Ce n’est pas une plateforme avec laquelle vous commenceriez un blog pour ensuite le transformer en boutique ecommerce (consultez les alternatives Shopify pour comparer les solutions). Magento est dans le même bateau. D’autres constructeurs de sites Web et plateformes ont plus de flexibilité, et ce sont généralement celles qui sont les plus populaires.</p>
+
+              <figure class="my-4">
+                <img src="https://cdn.pixabay.com/photo/2015/09/04/23/28/wordpress-923188__480.jpg" alt="" class="img-fluid">
+                <figcaption>
+voila les raisons pour laquels apprendre wordpress: </figcaption>
+              </figure>
+              <p>Le Logiciel est Gratuit et Open-Source:
+WordPress.com et WordPress.org sont entièrement gratuits. Vous pouvez apprendre la différence entre les deux ici, mais en bref, WordPress.org est une version auto-hébergée où vous contrôlez tout votre site et profitez des plugins avancés. WordPress.com fonctionne très bien pour les débutants complets, mais ce n’est pas exactement le meilleur pour une entreprise qui prévoit de faire de l’argent, s’éloigner de WordPress.com est logique. Il ont des plans payants plus hauts, mais nous le recommandons pour les blogs personnels et de loisir.</p>
+              <p> Il s’adapte Donc Vous Pouvez Faire n’importe Quel Type de Site Web:
+L’une des idées fausses courantes à propos de WordPress est qu’il est principalement destiné à la création de blogs. À un moment donné, c’était en fait le cas. WordPress a été développé en tant que plateforme de blogging, mais cela a changé radicalement avec les différentes nouvelles versions au fil des ans.
+
+En fait, WordPress est avantagé par ses racines de blogging. C’est de loin l’un des moyens les plus propres et les plus rapides d’écrire et de publier des articles de blog, et tout cela est inclus dès le début. Certains outils de création de site web pensent d’abord à la conception et aux applications, puis l’interface de blogging vient après coup comme une réflexion.</p>
+              <p>C’est Facile à Apprendre et il y a une Énorme Communauté:
+En tant que logiciel open-source, WordPress peut être utilisé par n’importe qui. La base d’utilisateurs n’est pas limitée par les prix, le support client haut de gamme ou même le niveau de compétence. Bien sûr, il y a beaucoup de choses à apprendre sur WordPress, mais n’importe qui peut jouer avec le tableau de bord pendant dix minutes et commencer à comprendre comment fonctionne l’interface.
+
+Et comme il n’y a pas beaucoup d’obstacles à l’accès au logiciel, les utilisateurs ont créé des blogs, des forums, des cours en ligne, des séminaires, des webinaires et des livres, tous décrivant différents aspects de la plateforme WordPress. Ensuite, il y a le support client plus officiel de WordPress. Vous pouvez soit payer un supplément pour un support dédié, soit travailler sur les forums WordPress.</p>
+              <p>Vous Pouvez Faire Évoluer et Étendre Votre Site Web avec des Thèmes et des Plugins:
+Nous avons déjà expliqué comment les thèmes et plugins WordPress vous facilitent la construction d’un site Web, mais ces éléments sont également essentiels pour la mise à l’échelle. Pour un blog standard, vous allez installer un thème, ajuster le design, puis commencer à bloguer. Il en va de même pour un site Web ou un portfolio d’entreprise.
+
+Il est courant que les thèmes servent de base au site. Après cela, le travail de conception est minime à part quelques changements de couleur, des ajouts de logo, et bien sûr, les nouvelles pages et les articles de blog.</p>
+              <p>Il n’y a pas Besoin d’être un Génie pour le Gérer:
+Les entreprises de développement de sites Web vendent souvent des forfaits coûteux où elles demandent une mise de fonds initiale et un paiement mensuel récurrent pour l’entretien. Le seul problème est que WordPress n’est pas si difficile à gérer si vous apprenez les ficelles du métier et si vous suivez une formation adéquate. La gestion d’un site Web implique généralement plusieurs choses :
+
+S’assure que le serveur va bien.
+Contrôler la sécurité.
+Exécuter des sauvegardes.
+Mettre à jour les plugins, les thèmes et le logiciel WordPress.
+Gérer le spam.
+Vérifier la fonctionnalité et les liens brisés.
+Améliorer la vitesse et le référencement.
+Vous ne vérifiez pas personnellement le serveur, il s’agit plutôt d’obtenir un bon hébergeur et de voir si le site fonctionne à tout moment. La sécurité et les sauvegardes sont gérées soit par des plugins, soit par un plan d’hébergement WordPress infogéré. Tout le reste de la liste n’a besoin d’être fait qu’à l’occasion. Par exemple, chez Kinsta, les sauvegardes sont automatiquement effectuées tous les jours, stockées pendant 14 jours et peuvent être restaurées en un simple clic sur un bouton.</p>
+              <figure class="my-4">
+                <img src="https://cdn.pixabay.com/photo/2016/03/29/11/48/wordpress-1288020__480.png" alt="" class="img-fluid">
+        
+              </figure>
+              <p> Le SEO passe en premier:
+WordPress est connu pour avoir le SEO intégré dans la plateforme. En fait, WordPress génère automatiquement des balises de titre et des méta descriptions pour toutes vos pages et vos articles. Cela permet aux moteurs de recherche de connaître votre contenu, ce qui vous permettra d’être indexé et éventuellement de grimper dans les classements. Comme pour tout dans WordPress, il y a aussi des fonctionnalités plus avancées offertes par les plugins et les outils en ligne. Voici quelques favoris SEO à considérer :
+
+Schema
+Broken Link Checker
+Rel Nofollow Checkbox</p>
+              <p>Vous avez le Contrôle Total de Votre Site Web:
+Une recherche Google pour « constructeurs de sites web » ou « plateformes de sites web » donne toutes sortes de résultats. WordPress sera très probablement sur toutes les listes de construction de site Web, avec la concurrence comme WIX, Squarespace, Joomla, Magento, Shopify, Weebly, et Jimdo. Tout cela est parfaitement adapté à la création de sites Web, mais ceux qui ne sont pas open source, comme Squarespace, Shopify et WIX, limitent votre contrôle à toutes les fonctionnalités offertes dans les packs premium.
+
+Cela vous laisse avec quelques limitations comme les suivantes :
+
+La fonctionnalité de ecommerce est généralement intégrée, il n’y a donc pas grand-chose que vous puissiez faire pour développer avec des plugins.
+Vous êtes généralement coincé avec l’hébergement fourni. Vous n’avez pas la liberté de tester les hébergeurs et d’opter pour le meilleur rapport qualité/prix ou les meilleures performances.
+L’ajustement du code est limité à ce que les entreprises partagent avec vous. Pire encore, vous vous retrouvez bloqué avec un langage de codage complètement unique, comme avec Shopify (il utilise un langage appelé Liquid). En bref, cela vous garantit presque que vous devez embaucher un développeur spécialisé pour les changements que vous ne pouvez pas gérer vous-même par l’intermédiaire de l’éditeur.
+Techniquement, vous n’avez pas la pleine propriété de votre site et de son contenu. Vous louez le site Web de ces compagnies. Ainsi, lorsque vous cessez de payer, tous ces fichiers et pages sont soit perdus, soit détenus par l’entreprise. Avec WordPress, vous êtes propriétaire des fichiers, et personne ne peut vous empêcher de les déplacer vers d’autres hébergeurs.
+</p>
+              <p> Le Système de Blogging est de Loin le Meilleur de l’industrie:
+WordPress est né comme plateforme de blogging. Il a eu ses concurrents, mais rien ne se compare actuellement à la puissance, à l’élégance et aux outils avancés que l’on trouve dans le moteur de blogging WordPress. Les options comme Tumblr, Medium, Ghost et Blogger sont toutes parfaitement adaptées aux amateurs, mais les pros optent pour WordPress. Un ensemble incroyable d’outils se trouve dans l’éditeur de blog WordPress.
+
+Vous pouvez tenir un blog simple d’un seul auteur en tirant parti des outils de mise en page et des outils médiatiques. Il y a aussi la possibilité de créer un magazine en ligne complet en programmant des articles très avancés et en définissant plusieurs types d’utilisateurs pour les contributeurs et les éditeurs. En plus des options de prévisualisation, d’édition de tout ce qui se trouve dans l’article, et de garder le code complètement hors de l’équation, vous ne pouvez vraiment pas battre WordPress.</p>
+              <p>Tout le Monde le Fait:
+Alors sautez du pont avec eux ! Ce n’est pas parce que tout le monde fait quelque chose que c’est la meilleure raison de les suivre. Mais WordPress a fait ses preuves à maintes reprises, ce qui a permis de faire connaître ses performances, son évolutivité et sa facilité d’utilisation. Il y a une raison pour laquelle plus de 29,3% de tous les sites Web sur Internet utilisent WordPress.</p>
+            </div><!-- End Single Post Content -->
+
+            
+
+            
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">& Astou;</span> <span>20 janvier 2020</span></div>
+                    <h2 class="mb-2">"Un esprit sain dans un corps sain le tout dans un environnement sain"</h2>
+                    <span class="author mb-3 d-block">Juvenal</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode de vie</span> <span class="mx-1">& gerald;</span> <span>04 fevrier 2010</span></div>
+                    <h2 class="mb-2">"Vivre simplement pour que les autres puissent simplement vivre" </h2>
+                    <span class="author mb-3 d-block">Mahatma Gandhi</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">& diarra;</span> <span>27 septembre 2009</span></div>
+                    <h2 class="mb-2">"Lisez, chaque jour, quelque chose qui élève l'esprit"</h2>
+                    <span class="author mb-3 d-block">Edgar Allan Poe</span>
+                  </div>
+
+                  
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Business</span> <span class="mx-1">& yande;</span> <span>20 mars 2020</span></div>
+                    <h2 class="mb-2"></h2>
+                    <span class="author mb-3 d-block">David Rockefeller</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Succes</span> <span class="mx-1">& Delza;</span> <span>05 avril 2023</span></div>
+                    <h2 class="mb-2"><a href="#">"Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. Si vous aimez ce que vous faites, vous réussirez."</a></h2>
+                    <span class="author mb-3 d-block">Albert Schweitzer</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+                <!-- Trending -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Technologie</span> <span class="mx-1">& michael;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2">Intelligence Artificielle (IA), l'Internet des Objets (IoT), la cybersécurité, la blockchain, la 5G, la réalité augmentée/virtuelle (RA/RV), la voiture autonome, la ville intelligente.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode </span> <span class="mx-1">& maurice;</span> <span>21 septembre 2022</span></div>
+                    <h2 class="mb-2">le style minimaliste, le streetwear, la mode durable et éthique, les sacs en bandoulière, le tailoring décontracté, les couleurs pastel, les vestes matelassées.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Alimentation </span> <span class="mx-1">&bullet;</span> <span>22 mars 2023</span></div>
+                    <h2 class="mb-2">la cuisine végétalienne, les aliments biologiques et locaux, les plats à base de plantes, les régimes pauvres en glucides, les aliments fermentés, les alternatives à la viande, les superaliments.</h2>
+                    <span class="author mb-3 d-block">Jenny</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Santé </span> <span class="mx-1">&bullet;</span> <span>23 janvier 2020</span></div>
+                    <h2 class="mb-2">le bien-être mental, la méditation, le sommeil de qualité, l'entraînement fonctionnel, la santé numérique, la médecine préventive, la thérapie en ligne.</h2>
+                    <span class="author mb-3 d-block"> Wilson</span>
+                  </div>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Divertissement</span> <span class="mx-1">& philip;</span> <span>20 aout 2018</span></div>
+                    <h2 class="mb-2">les jeux vidéo, les sports électroniques (e-sports), les podcasts, le streaming de musique et de films, la réalité virtuelle, la réalité augmentée, les plateformes de médias sociaux.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Éducation </span> <span class="mx-1">&bullet;</span> <span>5 decembre 2022</span></div>
+                    <h2 class="mb-2">l'apprentissage en ligne, la formation continue, l'éducation personnalisée, les compétences numériques, l'apprentissage par projet, l'éducation à distance, l'intelligence artificielle dans l'éducation.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+                </div> <!-- End Trending -->
+
+              
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.youtube.com/watch?v=ztEx9p1u9SY" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="a{% static 'assets/ssets/img/post-landscape-5.jpg' %}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
+
+           
+
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-legal">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>ZenBlog</span></strong>. All Rights Reserved
+            </div>
+
+           
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

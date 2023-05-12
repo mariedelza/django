@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>introduction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Meilleur Blog de la ville</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Blog</a></li>
+          <li><a href="{% url 'detail' %}">Articles</a></li>
+          <li class="dropdown"><a href="{% url 'category' %}"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url 'recherche' %}"> Recherche</a></li>
+               <li><a href="#"> Recherche</a></li>
+             
+              </li>
+              
+            </ul>
+          </li>
+
+          <li><a href="{% url 'about' %}">A propos</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="{% url 'recherche' %}" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Introduction a wordpress</span> <span class="mx-1">& Marie;</span> <span>20 janvier 2022</span></div>
+              <h1 class="mb-5">WordPress : un système de gestion de contenu.</h1>
+              <p><span class="firstcharacter">W</span>ordPress est actuellement le meilleur système de gestion de contenu jamais développé. Et il offre encore bien d’autres avantages :
+
+C’est un CMS gratuit,
+Il est très facile de prise en main,
+C’est un logiciel très léger,
+Il permet la gestion multi-utilisateurs,
+Il dispose d’une large communauté via lequel vous pouvez trouver des aides et de nouvelles solutions et innovations sur son utilisation,
+Il affiche un grand nombre de fonctionnalités (plus de 10 000 thèmes et 20 000 plug-ins disponibles),
+Etc.</p>
+
+              <figure class="my-4">
+                <img src="https://cdn.pixabay.com/photo/2015/01/05/11/02/wordpress-589121__340.jpg" alt="" class="img-fluid">
+                <figcaption>
+Détaillons un peu les principales caractéristiques de wordpress : </figcaption>
+              </figure>
+              <p>WordPress est le CMS (Système de Gestion de Contenu) le plus populaire du web. 75 millions de sites web utilisent WordPress et ses différents thèmes et plugins. WordPress permet la création de tous types de sites internet. Ce CMS est une référence en termes de SEO et de référencement des pages web. WordPress est le premier CMS cité par Google dans ses conseils SEO. WordPress un logiciel web open source gratuit. Il dispose d’une large communauté d’utilisateurs et même le site web de la Maison Blanche l’utilise.</p>
+              <p>La syntaxe de Python est très simple et, combinée à des types de données évolués (listes, dictionnaires,...), conduit à
+des programmes à la fois très compacts et très lisibles. A fonctionnalités égales, un programme Python (abondamment
+commenté et présenté selon les canons standards) est souvent de 3 à 5 fois plus court qu'un programme C ou C++ (ou
+même Java) équivalent, ce qui représente en général un temps de développement de 5 à 10 fois plus court et une
+facilité de maintenance largement accrue.</p>
+              <p>C’est quoi WordPress ? C’est le CMS gratuit disposant de la plus large communauté d’utilisateurs
+Un système de gestion de contenu web est un logiciel hébergé sur internet qui facilite la création des sites web en séparant la gestion du design de la création des contenus. Cette architecture permet la collaboration de nombreux utilisateurs qui peuvent, en fonction de leur rôle, se concentrer sur des tâches spécifiques. Un administrateur pourra se spécialiser dans la maintenance ou la sécurité internet alors qu’un éditeur prendra en charge la partie éditoriale et la gestion des contenus du site web.</p>
+              <p>Séparer le design des contenus, un véritable avantage évolutif initié par WordPress
+Avec WordPress le contenu est recyclable à l’infini. Ce que vous voyez : le design, l’ordonnancement des colonnes ou les couleurs est indépendant des contenus textuels. Le contenu des pages web de votre site ou blog peut être modifié sans affecter le design et vice versa. Les textes et les prix, s’il s’agit d’une plateforme e-commerce, sont stockés dans une base de données. Les éléments du design sont hébergés en dur dans un répertoire spécifique.</p>
+              <p>WordPress dispose d’une large communauté d’utilisateurs en ligne
+WordPress est le CMS disposant de la plus grande communauté d’utilisateurs de tout le web. Tout le monde peut remonter les bugs, corriger le code source ou créer une formation. L’installation d’un plugin vous pose problème ? Un thème n’offre pas le bon rendu ? Vous trouverez certainement sur internet une ressource en ligne pour vous aider. En compilant toutes les remontées des utilisateurs, les développeurs de WordPress produisent régulièrement de nouvelles versions du CMS toujours plus performantes. Cette communauté unique fait la force de WordPress.</p>
+              <figure class="my-4">
+                <img src="https://cdn.pixabay.com/photo/2016/11/09/08/58/wordpress-1810632__340.jpg" alt="" class="img-fluid">
+            
+              </figure>
+              <p> Qu’est-ce que WordPress ? Un CMS avec de nombreux thèmes et plugins
+Les extensions, plugins et thèmes de WordPress sont pléthoriques. Des plugins existent pour tous les besoins des sites web. Les thèmes sont si nombreux qu’ils répondent à presque tous les goûts. En cas de nécessité, rien de plus facile que de coder un nouveau plugin avec un cahier des charges détaillé ou un nouveau thème ad hoc pour une meilleure personnalisation de votre site web.
+
+</p>
+              <p>Des plugins gratuits ou payants mais toujours simples à installer avec WordPress
+Un plugin ou extension est un outil que l’on ajoute à un logiciel pour obtenir une fonctionnalité supplémentaire. Les plugins de WordPress viennent étoffer sa version de base. Quelles que soient les fonctionnalités que vous cherchez, il y aura presque toujours un plugin ou une extension adapté à votre utilisation. La plupart des plugins proposent une version gratuite avec des fonctionnalités évolutives. Cela permet de tester d’abord et de ne payer que le prix nécessaire. Leur installation est un jeu d’enfant. Besoin d’un éditeur de texte plus avancé ou d’une mise en page spécifique ? Rendez-vous sur la page plugins du site wordpress.com, l’installation se fait en deux clics.</p>
+              <p>WordPress offre des thèmes pour tous les goûts et pour tous les contenus.
+Un thème est à la fois une structure globale et un design particulier pour votre site web ou votre blog internet. Comme les plugins il s’installe facilement. Il existe des thèmes gratuits avec des fonctionnalités basiques et d’autres payants très élaborés. Vous travaillez dans le domaine du voyage ? Vous trouverez certainement un thème avec des fonctionnalités de gestion des réservations et un design appelant à s’évader. Vous vendez des articles de mode et désirez une plateforme de vente en ligne ? Installez le plugin Woocommerce avec un thème WordPress moderne et photogénique.</p>
+              <p>Côté technique : l’installation de WordPress et la création d’articles ou de pages web
+L’installation de WordPress est facile. Il faut simplement choisir la méthode la plus adaptée à votre connaissance d’internet. Si vous êtes à l’aise avec la notion de serveur web, de code PHP ou de base de données, choisissez l’installation manuelle de WordPress. Les néophytes qui veulent bénéficier d’une installation clé en main auront intérêt à se tourner vers un hébergeur ou une agence web. Confier la gestion de la sécurité, des changements de version et de la mise à jour des plugins à un hébergeur web est certainement la meilleure chose que l’on peut faire.</p>
+            </div><!-- End Single Post Content -->
+
+            
+
+            
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">& Astou;</span> <span>20 janvier 2020</span></div>
+                    <h2 class="mb-2">"Un esprit sain dans un corps sain le tout dans un environnement sain"</h2>
+                    <span class="author mb-3 d-block">Juvenal</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode de vie</span> <span class="mx-1">& gerald;</span> <span>04 fevrier 2010</span></div>
+                    <h2 class="mb-2">"Vivre simplement pour que les autres puissent simplement vivre" </h2>
+                    <span class="author mb-3 d-block">Mahatma Gandhi</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">& diarra;</span> <span>27 septembre 2009</span></div>
+                    <h2 class="mb-2">"Lisez, chaque jour, quelque chose qui élève l'esprit"</h2>
+                    <span class="author mb-3 d-block">Edgar Allan Poe</span>
+                  </div>
+
+                  
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Business</span> <span class="mx-1">& yande;</span> <span>20 mars 2020</span></div>
+                    <h2 class="mb-2"></h2>
+                    <span class="author mb-3 d-block">David Rockefeller</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Succes</span> <span class="mx-1">& Delza;</span> <span>05 avril 2023</span></div>
+                    <h2 class="mb-2"><a href="#">"Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. Si vous aimez ce que vous faites, vous réussirez."</a></h2>
+                    <span class="author mb-3 d-block">Albert Schweitzer</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+                <!-- Trending -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Technologie</span> <span class="mx-1">& michael;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2">Intelligence Artificielle (IA), l'Internet des Objets (IoT), la cybersécurité, la blockchain, la 5G, la réalité augmentée/virtuelle (RA/RV), la voiture autonome, la ville intelligente.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode </span> <span class="mx-1">& maurice;</span> <span>21 septembre 2022</span></div>
+                    <h2 class="mb-2">le style minimaliste, le streetwear, la mode durable et éthique, les sacs en bandoulière, le tailoring décontracté, les couleurs pastel, les vestes matelassées.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Alimentation </span> <span class="mx-1">&bullet;</span> <span>22 mars 2023</span></div>
+                    <h2 class="mb-2">la cuisine végétalienne, les aliments biologiques et locaux, les plats à base de plantes, les régimes pauvres en glucides, les aliments fermentés, les alternatives à la viande, les superaliments.</h2>
+                    <span class="author mb-3 d-block">Jenny</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Santé </span> <span class="mx-1">&bullet;</span> <span>23 janvier 2020</span></div>
+                    <h2 class="mb-2">le bien-être mental, la méditation, le sommeil de qualité, l'entraînement fonctionnel, la santé numérique, la médecine préventive, la thérapie en ligne.</h2>
+                    <span class="author mb-3 d-block"> Wilson</span>
+                  </div>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Divertissement</span> <span class="mx-1">& philip;</span> <span>20 aout 2018</span></div>
+                    <h2 class="mb-2">les jeux vidéo, les sports électroniques (e-sports), les podcasts, le streaming de musique et de films, la réalité virtuelle, la réalité augmentée, les plateformes de médias sociaux.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Éducation </span> <span class="mx-1">&bullet;</span> <span>5 decembre 2022</span></div>
+                    <h2 class="mb-2">l'apprentissage en ligne, la formation continue, l'éducation personnalisée, les compétences numériques, l'apprentissage par projet, l'éducation à distance, l'intelligence artificielle dans l'éducation.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+                </div> <!-- End Trending -->
+
+              
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.youtube.com/watch?v=Z9d09_h1j8c" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="{% static 'assets/ssets/img/post-landscape-5.jpg' %}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
+
+           
+
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-legal">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>ZenBlog</span></strong>. All Rights Reserved
+            </div>
+
+           
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

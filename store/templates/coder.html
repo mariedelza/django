@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>introduction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Meilleur Blog de la ville</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Blog</a></li>
+          <li><a href="{% url 'about' %}">A propos</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}"><button class="btn btn-info">Deconnexion</button></li> 
+            {% else %}
+            <li><a href="{% url 'login-blog' %}"><button class="btn btn-info">Connexion</button></li> 
+              {% endif %}
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="{% url 'recherche' %}" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Un langage simple à apprendre</span> <span class="mx-1">& Marie;</span> <span>20 janvier 2022</span></div>
+              <h1 class="mb-5">Les raisons d'apprendre à coder avec Python.</h1>
+              <p><span class="firstcharacter">P</span>ython est simple à apprendre et à comprendre. Il repose sur une logique explicite et sur une syntaxe épurée, qui se rapproche de celle du langage parlé. Ses fonctions sont en anglais : si tu as des notions d’anglais, tu comprends intuitivement le rôle de chaque fonction. Python est donc idéal pour débuter et comprendre les bases de la programmation. Le ministère de l’Education Nationale l’a d’ailleurs bien compris : depuis 2019, l’apprentissage de Python commence dès la classe de seconde. </p>
+
+              <figure class="my-4">
+                <img src="data:image/png;base64,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" alt="" class="img-fluid">
+                <figcaption>
+Détaillons un peu les principales caractéristiques de Python, plus précisément, du langage et de ses deux implantations actuelles : </figcaption>
+              </figure>
+              <p>Un langage simple à utiliser
+En plus d’être simple à apprendre, Python est un langage simple à utiliser.
+
+Le langage Python est très souple : pour chaque tâche que tu veux effectuer avec ton programme, il y a plusieurs manières différentes de la coder. Ce n’est pas le cas des autres langages informatiques comme C ou Java.
+
+Certaines lignes de code sont plus efficaces que d’autres car elles demandent moins d’énergie à ton ordinateur. Tu peux ainsi coder la même chose en cinq lignes ou en deux lignes, selon la méthode que tu choisis ! 
+
+C’est d’ailleurs une occasion de défi au sein de la communauté Python : les codeurs se challengent pour écrire un programme avec le moins de lignes possible. Ton inventivité sera ta meilleure alliée !
+
+</p>
+<p>La souplesse de Python est également due au fait que c’est un langage à typage dynamique. 
+
+Késako ? Explication :
+
+Lorsque Python manipule des variables, il leur attribue un type : 
+
+un mot est une chaîne de caractères du type string, 
+un nombre entier est du type integer, 
+un nombre décimal est du type floating number,
+etc. 
+Les opérations que Python peut effectuer sur une variable dépendent du type de cette variable.
+
+Les langages Java, C et C++ sont à typage statique : le type de la variable est spécifié une fois pour toutes lors de la création de cette variable, et ne pourra pas être changé au cours de la vie de cette variable. Certaines opérations sont donc interdites aux variables, parce qu'elles ne sont pas du bon type. 
+
+Avec Python en revanche, la variable se voit attribuer un type lors de sa création, mais il est possible pour le codeur de changer le type de cette variable plus tard dans son script.
+
+Python offre donc une bien plus grande flexibilité au développeur en lui permettant de manipuler ses variables comme il l’entend.</p>
+              <p>Une grande communauté Python 
+Une fois que tu es lancé(e) dans l’apprentissage de Python, tu bénéficies d’une large communauté pour t’aider et t’épauler. 
+
+Les ressources nécessaires pour utiliser les fonctions Python sont disponibles gratuitement sur le site python.org. Ce site accueille également un forum d’utilisateurs où sont échangés des conseils et des projets réussis. Tu peux également compter sur les sites collaboratifs comme Reddit, Kaggle ou StackOverflow.
+
+Python est le sujet de conversation avec la plus grosse croissance ces dernières années sur StackOverflow. En janvier 2022, près de 2 millions de questions sont relatives au langage Python.
+
+Chez Databird, nous te proposons un apprentissage de Python dans le cadre de nos formations de Data Analyst. En cours, en classe ou à distance, tu es encadré(e) par des professeurs qui t’aident à progresser dans ton apprentissage de Python et qui t’orientent sur des défis business concrets. L’objectif de nos formations est de te rendre opérationnel(le) en entreprise afin de décrocher un CDI en tant que Data Analyst. Pour plus d’informations, tu peux consulter le parcours de nos alumnis ou découvrir nos formations.</p>
+              <p>Un langage valorisé par les développeurs
+Les programmateurs des poids lourds du web ont adopté Python. C’est le cas des développeurs de Google, Meta (ex-Facebook), IBM… On notera aussi que le Guido Van Rossum appartient à l’équipe de Microsoft depuis novembre 2020 ! 
+
+La communauté Python évoquée plus haut est représentative de l’affection que portent les développeurs au langage Python. En plus d’être un gage de qualité du langage de programmation, c’est une bonne chose pour toi car tu bénéficies des ressources qui ont été développées par cette communauté.
+
+La manifestation la plus utile de cet esprit de communauté est l’existence des bibliothèques Python. Une bibliothèque (“library” en anglais) est une collection de fonctions liées à un thème spécifique, qui ne sont pas directement disponibles dans le pack originel Python. Ces fonctions sont développées et diffusées en libre accès par des développeurs expérimentés, qui ont su créer à partir des fonctions Python de base des fonctions plus sophistiquées. 
+
+Lorsque tu importes et utilises une bibliothèque, tu t’appuies sur le travail d’un autre utilisateur de Python et tu n’as pas besoin d’inventer la fonction toi-même ni de la coder.</p>
+              <p>Un langage valorisé par les recruteurs
+Maîtriser Python est un avantage de taille lorsqu’on postule à un CDI.
+
+En effet, Python est adapté au traitement des données et au secteur de la Data Science. Or, à l’heure du Big data, les entreprises récoltent un nombre exponentiel de données et cherchent à les valoriser pour améliorer leur offre. 
+
+Les entreprises des technologies de l’information (IT) sont tout particulièrement concernées. Malgré la pandémie de coronavirus, elles ont bénéficié d’une forte croissance économique. Elles recherchent aujourd’hui une main d'œuvre qualifiée pour traiter et comprendre les données.</p>
+              <figure class="my-4">
+                <img src="{% static 'assets/assets/img/post-landscape-2.jpg' %}" alt="" class="img-fluid">
+                <figcaption>Conseil  d'utilisation de Python </figcaption>
+              </figure>
+              <p>Le langage de programmation de la Data Science
+Si Python est un langage d’avenir, c’est parce qu' il est tout à fait indiqué pour la Data Science. Déjà en 2019, c' était le langage le plus recommandé par les acteurs du Big data.
+
+Python permet :
+
+la récolte de données, 
+l’analyse de données, 
+l’exploitation de données. 
+Python permet par exemple de réaliser du web scraping. Le web scraping avec Python consiste à collecter de grandes quantités d’informations disponibles sur Internet. Il peut s’agir par exemple des références produits, des prix d’une marketplace, des avis clients... Ce sont des données qu’il est théoriquement possible de récolter à la main en parcourant les pages du site. Python permet d’automatiser l’opération et de la rendre bien plus rapide.</p>
+              <p>Pour aller plus loin
+Python est également indiqué pour le développement d’algorithmes de Machine Learning. Cela consiste à coder un programme qui repère des patterns ou des tendances dans un ensemble de données.
+
+Chez Databird, tu apprends le concept de régression linéaire grâce au logiciel Dataiku, qui simplifie l’utilisation de Python pour le Machine Learning. La régression linéaire permet d’expliciter la fonction mathématique qui relie une multiplicité de variables…</p>
+              <p>Un langage très utilisé en développement web
+La Data Science n’est pas le seul domaine d’application de Python ! C’est également un langage très utile en développement web.
+
+Python est particulièrement indiqué pour le back-end development. Le back-end concerne tout ce que l’utilisateur ne voit pas, c'est-à-dire la structure de l’application web qui permet que tout fonctionne bien. 
+
+Certains frameworks, comme Django, sont très aboutis et très intéressants à utiliser dans un projet web. Django est une interface de développement web qui facilite la vie aux développeurs, et qui repose sur le langage Python.
+
+Un de tes réseaux sociaux préférés, Instagram, est développé en Python grâce au framework Django ! L’équipe de développeurs d’Instagram a choisi Python pour monitorer ses serveurs. Python est un langage efficace, qui réduit le temps de réponse de la plateforme aux requêtes de ses 500 millions d’utilisateurs quotidiens.
+
+</p>
+              <p>Enfin, Python a de nombreux autres domaines d’application.
+
+Ce langage est utilisé par les scientifiques et les chercheurs. La bibliothèque SciPy permet d’effectuer des calculs mathématiques et physiques complexes, comme l’interprétation de signal et la résolution d’équations différentielles. Python permet également de faire de la recherche en biologie (avec biopython) et en neurosciences (avec PsyPython).
+
+Python est également utilisé dans le domaine du divertissement. On t'a déjà parlé de l’importance de Python pour les réseaux sociaux comme Instagram. Mais Python permet aussi de développer des jeux vidéo comme Eve-Online, et même des films d’animation comme ceux de Disney !</p>
+            </div><!-- End Single Post Content -->
+
+            
+
+            
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">& Astou;</span> <span>20 janvier 2020</span></div>
+                    <h2 class="mb-2">"Un esprit sain dans un corps sain le tout dans un environnement sain"</h2>
+                    <span class="author mb-3 d-block">Juvenal</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode de vie</span> <span class="mx-1">& gerald;</span> <span>04 fevrier 2010</span></div>
+                    <h2 class="mb-2">"Vivre simplement pour que les autres puissent simplement vivre" </h2>
+                    <span class="author mb-3 d-block">Mahatma Gandhi</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">& diarra;</span> <span>27 septembre 2009</span></div>
+                    <h2 class="mb-2">"Lisez, chaque jour, quelque chose qui élève l'esprit"</h2>
+                    <span class="author mb-3 d-block">Edgar Allan Poe</span>
+                  </div>
+
+                  
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Business</span> <span class="mx-1">& yande;</span> <span>20 mars 2020</span></div>
+                    <h2 class="mb-2"></h2>
+                    <span class="author mb-3 d-block">David Rockefeller</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Succes</span> <span class="mx-1">& Delza;</span> <span>05 avril 2023</span></div>
+                    <h2 class="mb-2"><a href="#">"Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. Si vous aimez ce que vous faites, vous réussirez."</a></h2>
+                    <span class="author mb-3 d-block">Albert Schweitzer</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+                <!-- Trending -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Technologie</span> <span class="mx-1">& michael;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2">Intelligence Artificielle (IA), l'Internet des Objets (IoT), la cybersécurité, la blockchain, la 5G, la réalité augmentée/virtuelle (RA/RV), la voiture autonome, la ville intelligente.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode </span> <span class="mx-1">& maurice;</span> <span>21 septembre 2022</span></div>
+                    <h2 class="mb-2">le style minimaliste, le streetwear, la mode durable et éthique, les sacs en bandoulière, le tailoring décontracté, les couleurs pastel, les vestes matelassées.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Alimentation </span> <span class="mx-1">&bullet;</span> <span>22 mars 2023</span></div>
+                    <h2 class="mb-2">la cuisine végétalienne, les aliments biologiques et locaux, les plats à base de plantes, les régimes pauvres en glucides, les aliments fermentés, les alternatives à la viande, les superaliments.</h2>
+                    <span class="author mb-3 d-block">Jenny</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Santé </span> <span class="mx-1">&bullet;</span> <span>23 janvier 2020</span></div>
+                    <h2 class="mb-2">le bien-être mental, la méditation, le sommeil de qualité, l'entraînement fonctionnel, la santé numérique, la médecine préventive, la thérapie en ligne.</h2>
+                    <span class="author mb-3 d-block"> Wilson</span>
+                  </div>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Divertissement</span> <span class="mx-1">& philip;</span> <span>20 aout 2018</span></div>
+                    <h2 class="mb-2">les jeux vidéo, les sports électroniques (e-sports), les podcasts, le streaming de musique et de films, la réalité virtuelle, la réalité augmentée, les plateformes de médias sociaux.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Éducation </span> <span class="mx-1">&bullet;</span> <span>5 decembre 2022</span></div>
+                    <h2 class="mb-2">l'apprentissage en ligne, la formation continue, l'éducation personnalisée, les compétences numériques, l'apprentissage par projet, l'éducation à distance, l'intelligence artificielle dans l'éducation.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+                </div> <!-- End Trending -->
+
+              
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.data-bird.co/python/pourquoi-apprendre-python" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="{% static 'assets/ssets/img/post-landscape-5.jpg' %}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
+
+           
+
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-legal">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>Marie Ndiaye</span></strong>. All Rights Reserved
+            </div>
+
+           
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

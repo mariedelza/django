@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>introduction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Meilleur Blog de la ville</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Blog</a></li>
+        <li><a href="{% url 'about' %}">A propos</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}"><button class="btn btn-info">Deconnexion</button></li> 
+            {% else %}
+            <li><a href="{% url 'login-blog' %}"><button class="btn btn-info">Connexion</button></li> 
+              {% endif %}
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="{% url 'recherche' %}" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Introduction aux librairies Python</span> <span class="mx-1">& Marie;</span> <span>20 janvier 2022</span></div>
+              <h1 class="mb-5">Bibliothèques Python pour la Science des Données que vous devez connaître.</h1>
+              <p><span class="firstcharacter">P</span>ython est l’un des langages les plus populaires utilisés par les scientifiques et les développeurs de logiciels pour les tâches liées à la science des données (Data Science). Il peut être utilisé pour prévoir les résultats, automatiser les tâches, rationaliser les processus et offrir des informations de veille économique. Voici une liste non exhaustive de 15 bibliothèques Python pour la science des données que vous devez connaître.
+
+Il est possible de travailler avec des données en Python seul, mais il existe un certain nombre de bibliothèques open-source qui rendent les tâches de manipulation de données en Python beaucoup, beaucoup plus faciles.</p>
+
+              <figure class="my-4">
+                <img src="{% static 'assets/assets/img/post-landscape-7.jpg' %}" alt="" class="img-fluid">
+                <figcaption>
+ Voici une liste des bibliothèques Python les plus importantes pour les tâches de science des données: </figcaption>
+              </figure>
+              <p>Scrapy:
+Scrapy (l’une des bibliothèques de science des données en Python les plus populaires) aide à construire des programmes d’exploration (spider bots) qui peuvent récupérer des données structurées sur le web – par exemple, des URL ou des informations de contact. C’est un excellent outil pour scraper les données utilisées, par exemple, dans les modèles de Machine Learning en Python.
+
+Les développeurs l’utilisent pour collecter des données à partir d’API. Ce framework à part entière suit le principe « Don’t Repeat Yourself » dans la conception de son interface. En conséquence, l’outil incite les utilisateurs à écrire un code universel qui peut être réutilisé pour la construction et la mise à l’échelle de grands robots d’exploration. (lien vers le github scrapy)</p>
+              <p>BeautifulSoup:
+BeautifulSoup est une autre bibliothèque très populaire pour le crawling sur le web et le scraping de données. Si vous souhaitez collecter des données disponibles sur un site web mais non via un fichier CSV ou une API, BeautifulSoup peut vous aider à les scraper et à les organiser dans le format dont vous avez besoin. (lien documentation BeautifulSoup)
+
+</p>
+              <p>NumPy:
+NumPy (pour Numerical Python) est un outil parfait pour le calcul scientifique et la réalisation d’opérations de base et avancées avec des tableaux.
+
+La bibliothèque offre de nombreuses fonctionnalités pratiques permettant d’effectuer des opérations sur des tableaux (n-arrays) et des matrices en Python. Elle permet de traiter des tableaux qui stockent des valeurs du même type de données et facilite l’exécution d’opérations mathématiques sur les tableaux (et leur vectorisation). En fait, la vectorisation des opérations mathématiques sur le type de tableau NumPy augmente les performances et accélère le temps d’exécution. (lien github NumPy)
+
+Si vous voulez en apprendre plus, regardez ce guide NumPy.</p>
+              <p>SciPy:
+Cette bibliothèque utile comprend des modules pour l’algèbre linéaire, l’intégration, l’optimisation et les statistiques. Sa fonctionnalité principale a été construite sur NumPy, donc ses tableaux utilisent cette bibliothèque. SciPy fonctionne parfaitement pour toutes sortes de projets de programmation scientifique (sciences, mathématiques et ingénierie). Il offre des routines numériques efficaces telles que l’optimisation numérique, l’intégration et d’autres dans des sous-modules. La vaste documentation rend le travail avec cette bibliothèque vraiment facile. (lien github de SciPy)</p>
+              <p> Pandas:
+Pandas est une bibliothèque créée pour aider les développeurs à travailler intuitivement avec des données « étiquetées » et « relationnelles ». Elle est basée sur deux structures de données principales : « Série » (unidimensionnelle, comme une liste Python) et « Dataframe » (bidimensionnelle, comme un tableau à plusieurs colonnes). Pandas permet de convertir des structures de données en objets DataFrame, de gérer les données manquantes et d’ajouter/supprimer des colonnes de DataFrame, d’imputer les fichiers manquants et de tracer les données avec un histogramme ou une boîte à moustache. C’est un outil indispensable pour la manipulation et la visualisation des données. (lien github Pandas)</p>
+              <figure class="my-4">
+                <img src="data:image/png;base64,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" alt="" class="img-fluid">
+                <figcaption>Python et ces bibliotheques </figcaption>
+              </figure>
+              <p>  Keras:
+Keras est une excellente bibliothèque pour la construction de réseaux de neurones et la modélisation. Elle est très simple à utiliser et offre aux développeurs un bon degré d’extensibilité. La bibliothèque tire parti d’autres paquets (Theano ou TensorFlow) comme terminaux. De plus, Microsoft a intégré CNTK (Microsoft Cognitive Toolkit) pour servir d’autre backend. C’est un excellent choix si vous voulez expérimenter rapidement en utilisant des systèmes compacts – l’approche minimaliste de la conception est vraiment top ! (lien github Keras)</p>
+              <p> Scikit-Learn:
+Il s’agit d’une norme industrielle pour les projets de science des données basés en Python. Scikits est un groupe de paquets de SciPy qui ont été créés pour des fonctionnalités spécifiques – par exemple, le traitement d’images. Scikit-learn utilise les opérations mathématiques de SciPy pour exposer une interface concise aux algorithmes d’apprentissage machine les plus courants.
+
+Les spécialistes des données l’utilisent pour traiter les tâches standard de Machine Learning et d’exploration de données telles que le regroupement, la régression, la sélection de modèles, la réduction de la dimensionnalité et la classification. Un autre avantage ? Il s’accompagne d’une documentation de qualité et offre des performances élevées. (lien github scikit-learn)</p>
+              <p>PyTorch:
+PyTorch est un framework qui est parfait pour les data scientists qui veulent effectuer facilement des tâches de Deep Learning. L’outil permet d’effectuer des calculs de tenseurs avec une accélération GPU. Il est également utilisé pour d’autres tâches – par exemple, pour créer des graphiques de calcul dynamiques et calculer automatiquement des gradients. PyTorch est basé sur Torch, qui est une bibliothèque open-source de Deep Learning, implémentée en C, avec un habillage en Lua. (lien github PyTorch)</p>
+              <p> TensorFlow
+TensorFlow est un framework Python populaire pour le Machine Learning et le Deep Learning, qui a été développé à Google Brain. C’est le meilleur outil pour des tâches comme l’identification d’objets, la reconnaissance vocale et bien d’autres. Il permet de travailler avec des réseaux neuronaux artificiels qui doivent gérer plusieurs ensembles de données. La bibliothèque comprend plusieurs aides de couches (tflearn, tf-slim, skflow), qui la rendent encore plus fonctionnelle. TensorFlow s’enrichit constamment de nouvelles versions, notamment en corrigeant les éventuelles failles de sécurité ou en améliorant l’intégration de TensorFlow et du GPU. (lien github de TensorFlow)</p>
+            </div><!-- End Single Post Content -->
+
+            
+
+            
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">& Astou;</span> <span>20 janvier 2020</span></div>
+                    <h2 class="mb-2">"Un esprit sain dans un corps sain le tout dans un environnement sain"</h2>
+                    <span class="author mb-3 d-block">Juvenal</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode de vie</span> <span class="mx-1">& gerald;</span> <span>04 fevrier 2010</span></div>
+                    <h2 class="mb-2">"Vivre simplement pour que les autres puissent simplement vivre" </h2>
+                    <span class="author mb-3 d-block">Mahatma Gandhi</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">& diarra;</span> <span>27 septembre 2009</span></div>
+                    <h2 class="mb-2">"Lisez, chaque jour, quelque chose qui élève l'esprit"</h2>
+                    <span class="author mb-3 d-block">Edgar Allan Poe</span>
+                  </div>
+
+                  
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Business</span> <span class="mx-1">& yande;</span> <span>20 mars 2020</span></div>
+                    <h2 class="mb-2"></h2>
+                    <span class="author mb-3 d-block">David Rockefeller</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Succes</span> <span class="mx-1">& Delza;</span> <span>05 avril 2023</span></div>
+                    <h2 class="mb-2"><a href="#">"Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. Si vous aimez ce que vous faites, vous réussirez."</a></h2>
+                    <span class="author mb-3 d-block">Albert Schweitzer</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+                <!-- Trending -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Technologie</span> <span class="mx-1">& michael;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2">Intelligence Artificielle (IA), l'Internet des Objets (IoT), la cybersécurité, la blockchain, la 5G, la réalité augmentée/virtuelle (RA/RV), la voiture autonome, la ville intelligente.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode </span> <span class="mx-1">& maurice;</span> <span>21 septembre 2022</span></div>
+                    <h2 class="mb-2">le style minimaliste, le streetwear, la mode durable et éthique, les sacs en bandoulière, le tailoring décontracté, les couleurs pastel, les vestes matelassées.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Alimentation </span> <span class="mx-1">&bullet;</span> <span>22 mars 2023</span></div>
+                    <h2 class="mb-2">la cuisine végétalienne, les aliments biologiques et locaux, les plats à base de plantes, les régimes pauvres en glucides, les aliments fermentés, les alternatives à la viande, les superaliments.</h2>
+                    <span class="author mb-3 d-block">Jenny</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Santé </span> <span class="mx-1">&bullet;</span> <span>23 janvier 2020</span></div>
+                    <h2 class="mb-2">le bien-être mental, la méditation, le sommeil de qualité, l'entraînement fonctionnel, la santé numérique, la médecine préventive, la thérapie en ligne.</h2>
+                    <span class="author mb-3 d-block"> Wilson</span>
+                  </div>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Divertissement</span> <span class="mx-1">& philip;</span> <span>20 aout 2018</span></div>
+                    <h2 class="mb-2">les jeux vidéo, les sports électroniques (e-sports), les podcasts, le streaming de musique et de films, la réalité virtuelle, la réalité augmentée, les plateformes de médias sociaux.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Éducation </span> <span class="mx-1">&bullet;</span> <span>5 decembre 2022</span></div>
+                    <h2 class="mb-2">l'apprentissage en ligne, la formation continue, l'éducation personnalisée, les compétences numériques, l'apprentissage par projet, l'éducation à distance, l'intelligence artificielle dans l'éducation.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+                </div> <!-- End Trending -->
+
+              
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.youtube.com/watch?v=ztEx9p1u9SY" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="a{% static 'assets/ssets/img/post-landscape-5.jpg' %}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
+
+           
+
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-legal">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>Marie Ndiaye</span></strong>. All Rights Reserved
+            </div>
+
+           
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

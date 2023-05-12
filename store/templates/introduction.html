@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>introduction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="{% static 'assets/assets/css/variables.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Meilleur Blog de la ville</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Blog</a></li>
+          <li><a href="{% url 'about' %}">A propos</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}"><button class="btn btn-info">Deconnexion</button></li> 
+            {% else %}
+            <li><a href="{% url 'login-blog' %}"><button class="btn btn-info">Connexion</button></li> 
+              {% endif %}
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="position-relative">
+        <a href="#" class="mx-2"><span class="bi-facebook"></span></a>
+        <a href="#" class="mx-2"><span class="bi-twitter"></span></a>
+        <a href="#" class="mx-2"><span class="bi-instagram"></span></a>
+
+        <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        <!-- ======= Search Form ======= -->
+        <div class="search-form-wrap js-search-form-wrap">
+          <form action="{% url 'recherche' %}" class="search-form">
+            <span class="icon bi-search"></span>
+            <input type="text" placeholder="Search" class="form-control">
+            <button class="btn js-search-close"><span class="bi-x"></span></button>
+          </form>
+        </div><!-- End Search Form -->
+
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Introduction a Python</span> <span class="mx-1">& Marie;</span> <span>20 janvier 2022</span></div>
+              <h1 class="mb-5">Introduction à la programmation Python.</h1>
+              <p><span class="firstcharacter">P</span>ython est un langage de script de haut niveau, structuré et open source. Il est multi-paradigme et multi-usage.
+Développé à l'origine par Guido van Rossum en 1989 , il est, comme la plupart des applications et outils open source, maintenu par une équipe de
+développeurs un peu partout dans le monde.
+Conçu pour être orienté objet, il n'en dispose pas moins d'outils permettant de se livrer à la programmation fonctionnelle ou impérative ; c'est d'ailleurs une
+des raisons qui lui vaut son appellation de « langage agile ».
+Parmi les autres raisons, citons la rapidité de développement (qualité propre aux langages interprétés), la grande quantité de modules fournis dans la
+distribution de base ainsi que le nombre d'interfaces disponibles avec des bibliothèques écrites en C, C++ ou Fortran. Il est également apprécié pour la clarté
+de sa syntaxe, ce qui l'oppose au langage Perl..</p>
+
+              <figure class="my-4">
+                <img src="data:image/png;base64,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" alt="" class="img-fluid">
+                <figcaption>
+Détaillons un peu les principales caractéristiques de Python, plus précisément, du langage et de ses deux implantations actuelles : </figcaption>
+              </figure>
+              <p>Python est portable, non seulement sur les diﬀérentes variantes d'Unix, mais aussi sur les OS propriétaires: MacOS,
+BeOS, NeXTStep, MS-DOS et les diﬀérentes variantes de Windows. Un nouveau compilateur, baptisé JPython, est écrit
+en Java et génère du bytecode Java.</p>
+              <p>La syntaxe de Python est très simple et, combinée à des types de données évolués (listes, dictionnaires,...), conduit à
+des programmes à la fois très compacts et très lisibles. A fonctionnalités égales, un programme Python (abondamment
+commenté et présenté selon les canons standards) est souvent de 3 à 5 fois plus court qu'un programme C ou C++ (ou
+même Java) équivalent, ce qui représente en général un temps de développement de 5 à 10 fois plus court et une
+facilité de maintenance largement accrue.</p>
+              <p>Python est orienté-objet. Il supporte l'héritage multiple et la surcharge des opérateurs. Dans son modèle objets, et en
+reprenant la terminologie de C++, toutes les méthodes sont virtuelles.</p>
+              <p>Python intègre, comme Java ou les versions récentes de C++, un système d'exceptions, qui permettent de simpliﬁer
+considérablement la gestion des erreurs.</p>
+              <p>Python est dynamique (l'interpréteur peut évaluer des chaînes de caractères représentant des expressions ou des
+instructions Python), orthogonal (un petit nombre de concepts suﬃt à engendrer des constructions très riches), réﬂectif
+(il supporte la métaprogrammation, par exemple la capacité pour un objet de se rajouter ou de s'enlever des attributs
+ou des méthodes, ou même de changer de classe en cours d'exécution) et introspectif (un grand nombre d'outils de
+développement, comme le debugger ou le proﬁler, sont implantés en Python lui-même).</p>
+              <figure class="my-4">
+                <img src="data:image/png;base64,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" alt="" class="img-fluid">
+                <figcaption>Conseil d'installation et d'utilisation de Python </figcaption>
+              </figure>
+              <p> Conseils pour installer et configurer Python:
+Pour apprendre la programmation Python, il va falloir que vous pratiquiez et pour cela il est préférable que Python soit installé sur votre ordinateur. La bonne nouvelle est que vous pouvez installer gratuitement Python sur votre machine, que ce soit sous Windows, Mac OS X ou Linux. Nous donnons dans cette rubrique un résumé des points importants concernant cette installation. Tous les détails et la marche à suivre pas à pas sont donnés à l'adresse https://python.sdv.univ-paris-diderot.fr/livre-dunod.</p>
+              <p>L'apprentissage d'un langage informatique comme Python va nécessiter d'écrire des lignes de codes à l'aide d'un éditeur de texte. Si vous êtes débutants, on vous conseille d'utiliser notepad++ sous Windows, BBEdit ou CotEditor sous Mac OS X et gedit sous Linux. La configuration de ces éditeurs de texte est détaillée dans la rubrique Installation de Python disponible en ligne. Bien sûr, si vous préférez d'autres éditeurs comme Atom, Visual Studio Code, Sublime Text, emacs, vim, geany... utilisez-les !
+
+À toute fin utile, on rappelle que les logiciels Microsoft Word, WordPad et LibreOffice Writer ne sont pas des éditeurs de texte, ce sont des traitements de texte qui ne peuvent pas et ne doivent pas être utilisés pour écrire du code informatique.</p>
+              <p>Un shell est un interpréteur de commandes interactif permettant d'interagir avec l'ordinateur. On utilisera le shell pour lancer l'interpréteur Python.
+
+Pour approfondir la notion de shell, vous pouvez consulter les pages Wikipedia :
+
+du shell Unix fonctionnant sous Mac OS X et Linux ;
+du shell PowerShell fonctionnant sous Windows.
+Un shell possède toujours une invite de commande, c'est-à-dire un message qui s'affiche avant l'endroit où on entre des commandes. Dans tout cet ouvrage, cette invite est représentée systématiquement par le symbole dollar $, et ce quel que soit le système d'exploitation.
+
+Par exemple, si on vous demande de lancer l'instruction suivante :
+
+$ python
+
+il faudra taper seulement python sans le $ ni l'espace après le $.</p>
+              <p>En programmation, il est courant de répéter un certain nombre de choses (avec les boucles, voir le chapitre 5 Boucles et comparaisons) ou d'exécuter plusieurs instructions si une condition est vraie .</p>
+            </div><!-- End Single Post Content -->
+
+            
+
+            
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Popular</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sport</span> <span class="mx-1">& Astou;</span> <span>20 janvier 2020</span></div>
+                    <h2 class="mb-2">"Un esprit sain dans un corps sain le tout dans un environnement sain"</h2>
+                    <span class="author mb-3 d-block">Juvenal</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode de vie</span> <span class="mx-1">& gerald;</span> <span>04 fevrier 2010</span></div>
+                    <h2 class="mb-2">"Vivre simplement pour que les autres puissent simplement vivre" </h2>
+                    <span class="author mb-3 d-block">Mahatma Gandhi</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">& diarra;</span> <span>27 septembre 2009</span></div>
+                    <h2 class="mb-2">"Lisez, chaque jour, quelque chose qui élève l'esprit"</h2>
+                    <span class="author mb-3 d-block">Edgar Allan Poe</span>
+                  </div>
+
+                  
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Business</span> <span class="mx-1">& yande;</span> <span>20 mars 2020</span></div>
+                    <h2 class="mb-2"></h2>
+                    <span class="author mb-3 d-block">David Rockefeller</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Succes</span> <span class="mx-1">& Delza;</span> <span>05 avril 2023</span></div>
+                    <h2 class="mb-2"><a href="#">"Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. Si vous aimez ce que vous faites, vous réussirez."</a></h2>
+                    <span class="author mb-3 d-block">Albert Schweitzer</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+                <!-- Trending -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Technologie</span> <span class="mx-1">& michael;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2">Intelligence Artificielle (IA), l'Internet des Objets (IoT), la cybersécurité, la blockchain, la 5G, la réalité augmentée/virtuelle (RA/RV), la voiture autonome, la ville intelligente.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Mode </span> <span class="mx-1">& maurice;</span> <span>21 septembre 2022</span></div>
+                    <h2 class="mb-2">le style minimaliste, le streetwear, la mode durable et éthique, les sacs en bandoulière, le tailoring décontracté, les couleurs pastel, les vestes matelassées.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Alimentation </span> <span class="mx-1">&bullet;</span> <span>22 mars 2023</span></div>
+                    <h2 class="mb-2">la cuisine végétalienne, les aliments biologiques et locaux, les plats à base de plantes, les régimes pauvres en glucides, les aliments fermentés, les alternatives à la viande, les superaliments.</h2>
+                    <span class="author mb-3 d-block">Jenny</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Santé </span> <span class="mx-1">&bullet;</span> <span>23 janvier 2020</span></div>
+                    <h2 class="mb-2">le bien-être mental, la méditation, le sommeil de qualité, l'entraînement fonctionnel, la santé numérique, la médecine préventive, la thérapie en ligne.</h2>
+                    <span class="author mb-3 d-block"> Wilson</span>
+                  </div>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Divertissement</span> <span class="mx-1">& philip;</span> <span>20 aout 2018</span></div>
+                    <h2 class="mb-2">les jeux vidéo, les sports électroniques (e-sports), les podcasts, le streaming de musique et de films, la réalité virtuelle, la réalité augmentée, les plateformes de médias sociaux.</h2>
+                    <span class="author mb-3 d-block">Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Éducation </span> <span class="mx-1">&bullet;</span> <span>5 decembre 2022</span></div>
+                    <h2 class="mb-2">l'apprentissage en ligne, la formation continue, l'éducation personnalisée, les compétences numériques, l'apprentissage par projet, l'éducation à distance, l'intelligence artificielle dans l'éducation.</h2>
+                    <span class="author mb-3 d-block">Jenny </span>
+                  </div>
+                </div> <!-- End Trending -->
+
+              
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.youtube.com/watch?v=ztEx9p1u9SY" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="a{% static 'assets/ssets/img/post-landscape-5.jpg' %}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
+
+           
+
+           
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-legal">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <div class="copyright">
+              © Copyright <strong><span>Marie Ndiaye</span></strong>. All Rights Reserved
+            </div>
+
+           
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
